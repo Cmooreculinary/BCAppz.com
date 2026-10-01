@@ -1,0 +1,44 @@
+.conrad-dock {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 40;
+  width: min(280px, calc(100vw - 32px));
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+}
+.conrad-brain {
+  width: 72px;
+  height: 72px;
+  border: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, #fff 0 8%, transparent 9%),
+    radial-gradient(circle at 60% 40%, #9ff 0 6%, transparent 7%),
+    radial-gradient(circle at 50% 55%, #1b6 0 28%, #063 29% 46%, #021 47%);
+  box-shadow: 0 0 0 1px #0a0, 0 8px 24px rgba(0,0,0,.35);
+  transform: scale(1);
+}
+.conrad-brain.is-talking {
+  animation: conrad-pulse 0.85s ease-in-out infinite;
+}
+@keyframes conrad-pulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.12); filter: brightness(1.35); }
+}
+.conrad-caption {
+  margin: 0;
+  padding: 10px 12px;
+  background: #111;
+  color: #f4f4f4;
+  border-radius: 10px;
+  font: 14px/1.4 system-ui, sans-serif;
+}
+.conrad-stop, #meet-conrad {
+  font: 14px/1 system-ui, sans-serif;
+}
+.conrad-focus {
+  outline: 2px solid #1b6;
+  outline-offset: 4px;
+}
